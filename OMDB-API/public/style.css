@@ -60,6 +60,8 @@ button{
     background: whitesmoke;
     border-radius: 6px;
     opacity: 0.8;
+    font-family:Verdana, Geneva, sans-serif;
+    cursor:pointer;
 }
 
 input{
