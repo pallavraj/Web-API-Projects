@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get("/",function (req , res) {
-    res.render("search");
+    res.send("index");
 })
 
 app.get('/results', function (req , res) {
