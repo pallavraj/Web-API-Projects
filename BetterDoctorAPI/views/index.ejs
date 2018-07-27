@@ -1,12 +1,41 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+<div class="flex-container">
 <h1>SEARCH   RESULTS</h1>
 
 
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+
+            <th  scope="col">First_name</th>
+            <th  scope="col">Last_name</th>
+            <th  scope="col">TITLE</th>
+            <th  scope="col">IMAGE</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <%data["data"].forEach(function (dr) {%>
+        <tr>
+
+            <td > <%=dr["profile"].first_name%></td>
+
+            <td > <%=dr["profile"].last_name%></td>
+
+            <td > <%= dr["profile"].title %></td>
+
+            <td > <img src="<%= dr["profile"].image_url%>"></td>
+
+        </tr>
 
 
-<li>
+        <% })%>
 
+        </tbody>
+    </table>
 
-<%=data.data[0].practices[0]%>
+    <a href="/">Search Again</a>
 
-
-</li>
+</div>

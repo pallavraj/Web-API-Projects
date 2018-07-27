@@ -12,9 +12,9 @@ app.get("/",function (req , res) {
 
 app.get('/results', function (req , res) {
     var q = req.query.search;
-    var user_key = 'cb63a0b7167858983a55046353183b6d'; // Get your API key at developer.betterdoctor.com
+    var user_key = 'cb63a0b7167858983a55046353183b6d';
 
-    var url = 'https://api.betterdoctor.com/2018-03-01/doctors?query='+ q + 'skip=2&limit=10&user_key=' + user_key;
+    var url = 'https://api.betterdoctor.com/2016-03-01/doctors?location='+q+',100&skip=2&limit=10&user_key=' + user_key;
 
 
     request(url ,  function (error , response , data) {
