@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>DOCTOR SAHEB</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/main.css">
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="/know.css">
 </head>
-<body class="flex-container">
+
+<body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">DOCTOR SAHEB</a>
@@ -33,14 +28,33 @@
 
     </div>
 </nav>
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
 
-<h1 class="display-4">DOCTOR SAHEB</h1>
-<h3 class="h3"> SEARCH ENGINE AND KNOWLEDGE BANK</h3>
+        <th  scope="col">NAME</th>
+        <th  scope="col">DESCRIPTION</th>
+        <th scope="col">CATEGORY</th>
 
-<div class="box">
-    <a  href="/search" <button class="btn btn-outline-success my-2 my-md-0 a1" >SEARCH</button> ></a>
 
-    <a  href="/know" <button class="btn btn-outline-success my-2 my-md-0 a1" >KNOW</button> ></a>
-</div>
+    </tr>
+    </thead>
+
+<%data["data"].forEach(function (dr) {%>
+<tr>
+
+    <td > <%=dr["name"]%></td>
+    <td > <%= dr["description"]%></td>
+    <td >  <%=dr["category"]%></td>
+
+
+
+</tr>
+
+
+<% })%>
+
+</table>
+
+
 </body>
-</html>

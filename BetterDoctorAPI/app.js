@@ -6,15 +6,22 @@ app.set("view engine" , "ejs");
 app.use(express.static(__dirname + '/public'));
 
 
+
 app.get("/",function (req , res) {
     res.send("index");
 })
 
+
 app.get('/results', function (req , res) {
-    var q = req.query.search;
+    // var q = req.query.search;
+    var q1 = req.query.search;
     var user_key = 'cb63a0b7167858983a55046353183b6d';
 
-    var url = 'https://api.betterdoctor.com/2016-03-01/doctors?location='+q+',100&skip=2&limit=10&user_key=' + user_key;
+    // if(q) {
+    //     var url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=' + q + ',100&skip=2&limit=20&user_key=' + user_key;
+    // }
+
+        var url = 'https://api.betterdoctor.com/2018-07-01/doctors?query=' + q1 + ',100&skip=2&limit=20&user_key=' + user_key;
 
 
     request(url ,  function (error , response , data) {
@@ -29,6 +36,32 @@ app.get('/results', function (req , res) {
     })
 
 })
+
+app.get('/know', function (req , res) {
+    var user_key = 'cb63a0b7167858983a55046353183b6d';
+    var url = 'https://api.betterdoctor.com/2016-03-01/specialties?skip=0&limit=50&user_key='+user_key;
+
+
+    request(url ,  function (error , response , data) {
+        console.log(typeof data)
+        if(!error && response.statusCode==200){
+
+            var data = JSON.parse(data);
+            res.render("know" , {data : data});
+        }
+
+
+    })
+
+})
+
+
+app.get('/search', function (req , res) {
+
+    res.render("main");
+
+})
+
 
 
 
