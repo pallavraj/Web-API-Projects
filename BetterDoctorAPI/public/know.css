@@ -1,5 +1,5 @@
 table{
-    margin-top: 70px;
+    margin-top: 20px;
     background-color: white;
 }
 
@@ -23,6 +23,10 @@ tr {
     justify-content: center;
 }
 
+
+
 h1{
-    margin-top: 10px;
+    color : #880000;
+    margin-top: 60px;
+    margin-bottom: 0;
 }
