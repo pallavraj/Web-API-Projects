@@ -72,10 +72,6 @@ app.get('/about', function (req , res) {
 })
 
 
-
-
-
-
 app.listen(5000,function () {
 
     console.log("SERVER RUNNING")
